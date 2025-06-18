@@ -208,4 +208,6 @@ async def remove_message(interaction: discord.Interaction, member: discord.Membe
     embed.set_thumbnail(url=member.display_avatar.url)
     await interaction.response.send_message(embed=embed)
 
-bot.run(bot token)
+import os
+TOKEN = os.getenv("TOKEN")
+
