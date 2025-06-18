@@ -4,8 +4,8 @@ from discord import app_commands
 import json
 import os
 
-TOKEN = bot token  # Replace with your bot token
-GUILD_ID = 1382792314270781460  # Replace with your server's actual ID
+TOKEN = 'YOUR_BOT_TOKEN'  # Replace with your bot token
+GUILD_ID = 1097210688365142097  # Replace with your server's actual ID
 DATA_FILE = 'message_counts.json'
 
 MILESTONES = {
@@ -208,6 +208,6 @@ async def remove_message(interaction: discord.Interaction, member: discord.Membe
     embed.set_thumbnail(url=member.display_avatar.url)
     await interaction.response.send_message(embed=embed)
 
-import os
-TOKEN = os.getenv("TOKEN")
+bot.run(TOKEN)
+
 
