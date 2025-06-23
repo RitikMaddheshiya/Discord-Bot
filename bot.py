@@ -1,11 +1,15 @@
+
 import discord
 from discord.ext import commands
 from discord import app_commands
 import json
 import os
+from dotenv import load_dotenv
 
-TOKEN = 'YOUR_BOT_TOKEN'  # Replace with your bot token
-GUILD_ID = 1097210688365142097  # Replace with your server's actual ID
+# Load environment variables from .env file
+load_dotenv()
+TOKEN = os.environ.get("DISCORD_BOT_TOKEN")
+GUILD_ID = 123456789012345678  # <-- Replace with your actual Guild (Server) ID as an integer
 DATA_FILE = 'message_counts.json'
 
 MILESTONES = {
@@ -40,7 +44,7 @@ MILESTONES = {
 }
 
 intents = discord.Intents.default()
-intents.messages = True
+intents.message_content = True
 intents.guilds = True
 intents.members = True
 
@@ -153,7 +157,7 @@ async def message_leaderboard(interaction: discord.Interaction):
             avatar_url = member.display_avatar.url
         else:
             name = f"User {user_id}"
-            avatar_url = discord.Embed.Empty
+            avatar_url = None
         embed.add_field(
             name=f"{medals[i]} {name}",
             value=f"Messages: **{count}**",
