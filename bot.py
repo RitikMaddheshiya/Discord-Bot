@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 TOKEN = os.environ.get("DISCORD_BOT_TOKEN")
-GUILD_ID = 123456789012345678  # <-- Replace with your actual Guild (Server) ID as an integer
+GUILD_ID = 1097210688365142097  # <-- Replace with your actual Guild (Server) ID as an integer
 DATA_FILE = 'message_counts.json'
 
 MILESTONES = {
